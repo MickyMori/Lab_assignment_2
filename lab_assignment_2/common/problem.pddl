@@ -13,4 +13,5 @@
     (visited wp2)
     (visited wp3)
     (visited wp4)
+    (robot_at kenny wp4)
 )))
