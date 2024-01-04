@@ -150,9 +150,14 @@ add_dependencies(logic_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTE
 add_dependencies(go_to_wp_action ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(logic_node go_to_wp_action
+target_link_libraries(logic_node
   ${catkin_LIBRARIES}
  )
+
+target_link_libraries(go_to_wp_action
+ ${catkin_LIBRARIES}
+)
+
 
 #############
 ## Install ##
