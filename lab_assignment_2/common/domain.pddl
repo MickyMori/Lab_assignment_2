@@ -9,22 +9,15 @@
 	(visited ?wp - waypoint)
 )
 (:durative-action goto_waypoint
-	:parameters (?r - robot ?from ?to - waypoint)
+	:parameters (?v - robot ?from ?to - waypoint)
 	:duration ( = ?duration 60)
-	:condition (
-		(at start (robot_at ?r ?from)))
+	:condition (and
+		(at start (robot_at ?v ?from)))
 	:effect (and
-		(at end (robot_at ?r ?to))
-		(at start (not (robot_at ?r ?from))))
+		(at end (visited ?to))
+		(at end (robot_at ?v ?to))
+		(at start (not (robot_at ?v ?from))))
 )
-
-(:durative-action visits
-	:parameters (?r - robot ?wp - waypoint)
-	:duration ( = ?duration 3)
-	:condition (over all (robot_at ?r ?wp))
-	:effect (at end (visited ?wp))
-)
-
 
 
 )

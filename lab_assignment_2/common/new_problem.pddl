@@ -6,6 +6,8 @@
 )
 (:init
     (robot_at kenny wp0)
+
+
 )
 (:goal (and
     (visited wp0)
@@ -13,4 +15,5 @@
     (visited wp2)
     (visited wp3)
     (visited wp4)
-)))
+))
+)
