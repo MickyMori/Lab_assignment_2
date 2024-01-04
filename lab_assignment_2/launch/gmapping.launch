@@ -2,7 +2,7 @@
 
 <launch>
 	<param name="use_sim_time" value="true"/>
-    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" launch-prefix="konsole -e">
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">
       <param name="base_frame" value="base_link"/>
       <param name="map_update_interval" value="5.0"/>
       <param name="maxUrange" value="16.0"/>
