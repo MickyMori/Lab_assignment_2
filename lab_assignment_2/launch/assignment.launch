@@ -69,7 +69,7 @@
   </node>
 
   <!-- action interface -->
-    <node name="rosplan_interface_goto_waypoint" pkg="my_rosplan_interface" type="move_base" respawn="false" output="screen">
+    <node name="rosplan_interface_goto_waypoint" pkg="move_base" type="move_base" respawn="false" output="screen">
         <param name="knowledge_base" value="rosplan_knowledge_base" />
         <param name="pddl_action_name" value="goto_waypoint" />
         <param name="action_dispatch_topic" value="/move_base/current_goal" />
