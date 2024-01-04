@@ -23,6 +23,8 @@
 
   <include file="$(find lab_assignment_2)/launch/move_base.launch"/>
 
+  <include file="$(find planning)/launch/gmapping.launch"></include>
+
   <!-- arguments -->
   <arg name="domain_path" default="$(find lab_assignment_2)/common/domain.pddl" />
   <arg name="problem_path" default="$(find lab_assignment_2)/common/problem.pddl" />
