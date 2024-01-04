@@ -8,7 +8,6 @@
     (robot_at kenny wp0)
 )
 (:goal (and
-    (visited wp0)
     (visited wp1)
     (visited wp2)
     (visited wp3)
