@@ -27,7 +27,7 @@
 	<arg name="problem_topic" value="/rosplan_problem_interface/problem_instance"  />
 	<arg name="planner_topic" value="planner_output" />
 	<arg name="domain_path" value="$(arg domain_path)" />
-	<arg name="data_path" value="$(find assignment2_exprob)/pddl" />
+	<arg name="data_path" value="$(find lab_assignment_2)/pddl" />
 	<arg name="planner_command" value="timeout 10 $(find rosplan_planning_system)/common/bin/popf DOMAIN PROBLEM"/>
 	</include>
 	
