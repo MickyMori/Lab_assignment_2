@@ -154,10 +154,6 @@ target_link_libraries(logic_node
   ${catkin_LIBRARIES}
  )
 
-target_link_libraries(go_to_wp_action
- ${catkin_LIBRARIES}
-)
-
 
 #############
 ## Install ##
