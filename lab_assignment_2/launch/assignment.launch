@@ -21,7 +21,7 @@
 
   <node pkg="lab_assignment_2" type="logic_node" name="logic_node"/>
 
-  <node pkg="move_base" type="move_base" name="move_base"/>
+  <include file="$(find lab_assignment_2)/launch/move_base.launch"/>
 
   <!-- arguments -->
   <arg name="domain_path" default="$(find lab_assignment_2)/common/domain.pddl" />
