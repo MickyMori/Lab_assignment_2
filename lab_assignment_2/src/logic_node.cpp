@@ -31,7 +31,7 @@ int main(int argc, char **argv)
                 }
                 else
                 {
-                    ROS_ERROR("Failed to call dispatcher");
+                    ROS_ERROR("Failed to call parser");
                     return 1;
                 }
             }

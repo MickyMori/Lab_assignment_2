@@ -19,7 +19,7 @@
 )
 
 ;; Move to any waypoint, avoiding terrain
-(:durative-action goto_waypoint
+(:durative-action go_to_waypoint
  :parameters (?r - robot ?from ?to - waypoint)
  :duration ( = ?duration 60)
  :condition (and
