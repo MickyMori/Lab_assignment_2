@@ -19,7 +19,7 @@
   
   <include file="$(find rosbot_bringup)/launch/rosbot_gazebo.launch"/>
 
-  <node pkg="lab_assignment_2" type="logic_node" name="logic_node" launch-prefix="-e konsole"/>
+  <node pkg="lab_assignment_2" type="logic_node" name="logic_node" launch-prefix="konsole -e"/>
 
   <include file="$(find lab_assignment_2)/launch/move_base.launch"/>
 
