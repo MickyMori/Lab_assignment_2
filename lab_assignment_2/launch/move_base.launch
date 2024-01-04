@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
-  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" launch-prefix="konsole -e">
 	<!--<param name="base_global_planner" value="carrot_planner/CarrotPlanner" />-->
 	<!--<param name="base_global_planner" value="global_planner/GlobalPlanner" />-->
     <rosparam file="$(find lab_assignment_2)/param/costmap_common_params.yaml" command="load" ns="global_costmap"/>
