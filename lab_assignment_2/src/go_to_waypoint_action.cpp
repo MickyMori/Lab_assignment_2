@@ -19,24 +19,20 @@ namespace KCL_rosplan {
 	    geometry_msgs::PoseStamped goal;
         ac.waitForServer();
         if(msg->parameters[2].value == "wp1"){
-            goal.target_pose.pose.position.x = 2.0;
-            goal.target_pose.pose.position.y = 0.0;
-            goal.target_pose.pose.orientation.w = 0.0;
+            goal.pose.position.x = 2.0;
+            goal.pose.position.y = 0.0;
         }
         else if (msg->parameters[2].value == "wp2"){
-            goal.target_pose.pose.position.x = 2.0;
-            goal.target_pose.pose.position.y = 2.0;
-            goal.target_pose.pose.orientation.w = 0.0;
+            goal.pose.position.x = 2.0;
+            goal.pose.position.y = 2.0;
         }
         else if (msg->parameters[2].value == "wp3"){
-            goal.target_pose.pose.position.x = 0.0;
-            goal.target_pose.pose.position.y = 2.0;
-            goal.target_pose.pose.orientation.w = 0.0;
+            goal.pose.position.x = 0.0;
+            goal.pose.position.y = 2.0;
         }
         else if (msg->parameters[2].value == "wp4"){
-            goal.target_pose.pose.position.x = 0.0;
-            goal.target_pose.pose.position.y = -2.0;
-            goal.target_pose.pose.orientation.w = 0.0;
+            goal.pose.position.x = 0.0;
+            goal.pose.position.y = -2.0;
         }
         ac.sendGoal(goal);
         ac.waitForResult();
