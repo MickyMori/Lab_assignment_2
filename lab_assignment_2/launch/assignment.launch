@@ -19,7 +19,7 @@
   
   <include file="$(find rosbot_bringup)/launch/rosbot_gazebo.launch"/>
 
-  <node pkg="lab_assignment_2" type="logic_node" name="logic_node"/>
+  <node pkg="lab_assignment_2" type="logic_node" name="logic_node" launch-prefix="konsole -e"/>
 
   <node name="go_to_point" pkg="motion_plan" type="go_to_point_action.py" respawn="false" launch-prefix="konsole -e"/>
 
