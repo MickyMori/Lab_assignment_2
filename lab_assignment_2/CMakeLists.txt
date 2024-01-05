@@ -13,7 +13,6 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   std_srvs
   geometry_msgs
-  move_base_msgs
   rosplan_planning_system
 )
 
@@ -138,7 +137,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(logic_node src/logic_node.cpp)
-add_executable(go_to_wp_action src/go_to_waypoint_action.cpp)
+add_executable(go_to_wp src/action/go_to_waypoint.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -149,7 +148,7 @@ add_executable(go_to_wp_action src/go_to_waypoint_action.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies(logic_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(go_to_wp_action ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(go_to_wp ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(logic_node
