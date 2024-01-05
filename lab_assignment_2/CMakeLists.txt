@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   std_srvs
   geometry_msgs
+  move_base_msgs
   rosplan_planning_system
 )
 
@@ -154,6 +155,7 @@ add_dependencies(go_to_wp_action ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 target_link_libraries(logic_node
   ${catkin_LIBRARIES}
  )
+
 
 #############
 ## Install ##
