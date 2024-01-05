@@ -19,7 +19,7 @@
   
   <include file="$(find rosbot_bringup)/launch/rosbot_gazebo.launch"/>
 
-  <node pkg="lab_assignment_2" type="logic_node" name="logic_node"/>
+  <node pkg="lab_assignment_2" type="logic_node" name="logic_node" launch-prefix="konsole -e"/>
 
   <include file="$(find lab_assignment_2)/launch/move_base.launch"/>
 
@@ -63,7 +63,7 @@
   </node>
 
   <!-- plan dispatcher -->
-  <node name="rosplan_plan_dispatcher" pkg="rosplan_planning_system" type="pddl_simple_plan_dispatcher" respawn="false" output="screen">
+  <node name="rosplan_plan_dispatcher" pkg="rosplan_planning_system" type="pddl_simple_plan_dispatcher" respawn="false" output="screen" launch-prefix="konsole -e">
     <param name="knowledge_base" value="rosplan_knowledge_base" />
     <param name="plan_topic" value="/rosplan_parsing_interface/complete_plan" />
     <param name="action_dispatch_topic" value="action_dispatch" />
@@ -71,7 +71,7 @@
   </node>
 
   <!-- action interface -->
-    <node name="rosplan_interface_goto_waypoint" pkg="lab_assignment_2" type="go_to_wp" respawn="false" output="screen">
+    <node name="rosplan_interface_goto_waypoint" pkg="lab_assignment_2" type="go_to_wp" respawn="false" output="screen" launch-prefix="konsole -e">
         <param name="knowledge_base" value="rosplan_knowledge_base" />
         <param name="pddl_action_name" value="goto_waypoint" />
         <param name="action_dispatch_topic" value="/rosplan_plan_dispatcher/action_dispatch" />
