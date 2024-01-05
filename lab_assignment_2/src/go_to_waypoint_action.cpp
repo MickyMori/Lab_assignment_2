@@ -17,24 +17,40 @@ namespace KCL_rosplan {
         std::cout << "Going from " << msg->parameters[1].value << " to " << msg->parameters[2].value << std::endl;
         
         actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ac("move_base", true);
-	    move_base_msgs::MoveBaseActionGoal goal;
+
+	    move_base_msgs::MoveBaseActionGoal action_goal;
+        move_base_msgs::MoveBaseGoal goal;
+
         ac.waitForServer();
+
+        action_goal.goal_id.stamp = ros::Time::now(); 
+        action_goal.goal_id.id = "map";
+
+        action_goal.goal.target_pose.header.frame_id = "map";
+        action_goal.goal.target_pose.header.stamp = ros::Time::now();
+
         if(msg->parameters[2].value == "wp1"){
-            goal.goal.target_pose.pose.position.x = 2.0;
-            goal.goal.target_pose.pose.position.y = 0.0;
+            action_goal.goal.target_pose.pose.position.x = 2.0;
+            action_goal.goal.target_pose.pose.position.y = 0.0;
         }
         else if (msg->parameters[2].value == "wp2"){
-            goal.goal.target_pose.pose.position.x = 2.0;
-            goal.goal.target_pose.pose.position.y = 2.0;
+            action_goal.goal.target_pose.pose.position.x = 2.0;
+            action_goal.goal.target_pose.pose.position.y = 2.0;
         }
         else if (msg->parameters[2].value == "wp3"){
-            goal.goal.target_pose.pose.position.x = 0.0;
-            goal.goal.target_pose.pose.position.y = 2.0;
+            action_goal.goal.target_pose.pose.position.x = 0.0;
+            action_goal.goal.target_pose.pose.position.y = 2.0;
         }
         else if (msg->parameters[2].value == "wp4"){
-            goal.goal.target_pose.pose.position.x = 0.0;
-            goal.goal.target_pose.pose.position.y = -2.0;
+            action_goal.goal.target_pose.pose.position.x = 0.0;
+            action_goal.goal.target_pose.pose.position.y = -2.0;
         }
+
+        action_goal.header.stamp = ros::Time::now(); 
+        action_goal.header.frame_id = "map";
+
+        goal = action_goal.goal;
+
         ac.sendGoal(goal);
         ac.waitForResult();
         
