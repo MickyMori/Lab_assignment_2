@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
+#include <move_base_msgs/MoveBaseAction.h>
 #include <geometry_msgs/PoseStamped.h>
 
 namespace KCL_rosplan {
@@ -15,24 +16,24 @@ namespace KCL_rosplan {
         // here the implementation of the action
         std::cout << "Going from " << msg->parameters[1].value << " to " << msg->parameters[2].value << std::endl;
         
-        actionlib::SimpleActionClient<geometry_msgs::PoseStamped> ac("/move_base_simple/goal", true);
+        actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ac("move_base", true);
 	    geometry_msgs::PoseStamped goal;
         ac.waitForServer();
         if(msg->parameters[2].value == "wp1"){
-            goal.pose.position.x = 2.0;
-            goal.pose.position.y = 0.0;
+            goal.target_pose.pose.position.x = 2.0;
+            goal.target_pose.pose.position.y = 0.0;
         }
         else if (msg->parameters[2].value == "wp2"){
-            goal.pose.position.x = 2.0;
-            goal.pose.position.y = 2.0;
+            goal.target_pose.pose.position.x = 2.0;
+            goal.target_pose.pose.position.y = 2.0;
         }
         else if (msg->parameters[2].value == "wp3"){
-            goal.pose.position.x = 0.0;
-            goal.pose.position.y = 2.0;
+            goal.target_pose.pose.position.x = 0.0;
+            goal.target_pose.pose.position.y = 2.0;
         }
         else if (msg->parameters[2].value == "wp4"){
-            goal.pose.position.x = 0.0;
-            goal.pose.position.y = -2.0;
+            goal.target_pose.pose.position.x = 0.0;
+            goal.target_pose.pose.position.y = -2.0;
         }
         ac.sendGoal(goal);
         ac.waitForResult();
