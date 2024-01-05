@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
-#include <motion_plan/PlanningAction.h>
+#include <geometry_msgs/PoseStamped.h>
 
 namespace KCL_rosplan {
 
@@ -15,8 +15,8 @@ namespace KCL_rosplan {
         // here the implementation of the action
         std::cout << "Going from " << msg->parameters[1].value << " to " << msg->parameters[2].value << std::endl;
         
-        actionlib::SimpleActionClient<motion_plan::PlanningAction> ac("reaching_goal", true);
-	motion_plan::PlanningGoal goal;
+        actionlib::SimpleActionClient<geometry_msgs::PoseStamped> ac("/move_base_simple/goal", true);
+	    geometry_msgs::PoseStamped goal;
         ac.waitForServer();
         if(msg->parameters[2].value == "wp1"){
             goal.target_pose.pose.position.x = 2.0;
