@@ -137,7 +137,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(logic_node src/logic_node.cpp)
-add_executable(go_to_wp src/action/go_to_waypoint.cpp)
+add_executable(go_to_wp src/actions/go_to_waypoint.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
