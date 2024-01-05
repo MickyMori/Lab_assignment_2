@@ -21,7 +21,7 @@
 
   <node pkg="lab_assignment_2" type="logic_node" name="logic_node"/>
 
-  <node name="go_to_point" pkg="motion_plan" type="go_to_point_action.py" respawn="false"/>
+  <node name="go_to_point" pkg="motion_plan" type="go_to_point_action.py" respawn="false" launch-prefix="konsole -e"/>
 
   <include file="$(find lab_assignment_2)/launch/gmapping.launch"></include>
 
