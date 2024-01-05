@@ -50,7 +50,7 @@ namespace KCL_rosplan {
         action.action_goal.header.stamp = ros::Time::now(); 
         action.action_goal.header.frame_id = "map";
 
-        ac.sendGoal(action.action_goal);
+        ac.sendGoal(action.action_goal.goal);
         ac.waitForResult();
         
         
