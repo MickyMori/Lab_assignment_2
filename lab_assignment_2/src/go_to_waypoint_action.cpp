@@ -17,7 +17,7 @@ namespace KCL_rosplan {
         std::cout << "Going from " << msg->parameters[1].value << " to " << msg->parameters[2].value << std::endl;
         
         actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ac("move_base", true);
-	    geometry_msgs::PoseStamped goal;
+	    move_base_msgs::MoveBaseActionGoal goal;
         ac.waitForServer();
         if(msg->parameters[2].value == "wp1"){
             goal.target_pose.pose.position.x = 2.0;
