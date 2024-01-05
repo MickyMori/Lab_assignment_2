@@ -3,6 +3,8 @@
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
 #include <move_base_msgs/MoveBaseAction.h>
+#include <move_base_msgs/MoveBaseActionGoal.h>
+#include <move_base_msgs/MoveBaseGoal.h>
 #include <geometry_msgs/PoseStamped.h>
 
 namespace KCL_rosplan {
