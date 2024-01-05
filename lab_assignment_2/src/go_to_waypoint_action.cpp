@@ -20,40 +20,37 @@ namespace KCL_rosplan {
         
         actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ac("move_base", true);
 
-	    move_base_msgs::MoveBaseActionGoal action_goal;
-        move_base_msgs::MoveBaseGoal goal;
+	    move_base_msgs::MoveBaseAction action;
 
         ac.waitForServer();
 
-        action_goal.goal_id.stamp = ros::Time::now(); 
-        action_goal.goal_id.id = "map";
+        action.action_goal.goal_id.stamp = ros::Time::now(); 
+        action.action_goal.goal_id.id = "map";
 
-        action_goal.goal.target_pose.header.frame_id = "map";
-        action_goal.goal.target_pose.header.stamp = ros::Time::now();
+        action.action_goal.goal.target_pose.header.frame_id = "map";
+        action.action_goal.goal.target_pose.header.stamp = ros::Time::now();
 
         if(msg->parameters[2].value == "wp1"){
-            action_goal.goal.target_pose.pose.position.x = 2.0;
-            action_goal.goal.target_pose.pose.position.y = 0.0;
+            action.action_goal.goal.target_pose.pose.position.x = 2.0;
+            action.action_goal.goal.target_pose.pose.position.y = 2.0;
         }
         else if (msg->parameters[2].value == "wp2"){
-            action_goal.goal.target_pose.pose.position.x = 2.0;
-            action_goal.goal.target_pose.pose.position.y = 2.0;
+            action.action_goal.goal.target_pose.pose.position.x = 2.0;
+            action.action_goal.goal.target_pose.pose.position.y = 2.0;
         }
         else if (msg->parameters[2].value == "wp3"){
-            action_goal.goal.target_pose.pose.position.x = 0.0;
-            action_goal.goal.target_pose.pose.position.y = 2.0;
+            action.action_goal.goal.target_pose.pose.position.x = 0.0;
+            action.action_goal.goal.target_pose.pose.position.y = 2.0;
         }
         else if (msg->parameters[2].value == "wp4"){
-            action_goal.goal.target_pose.pose.position.x = 0.0;
-            action_goal.goal.target_pose.pose.position.y = -2.0;
+            action.action_goal.goal.target_pose.pose.position.x = 0.0;
+            action.action_goal.goal.target_pose.pose.position.y = -2.0;
         }
 
-        action_goal.header.stamp = ros::Time::now(); 
-        action_goal.header.frame_id = "map";
+        action.action_goal.header.stamp = ros::Time::now(); 
+        action.action_goal.header.frame_id = "map";
 
-        goal = action_goal.goal;
-
-        ac.sendGoal(goal);
+        ac.sendGoal(action);
         ac.waitForResult();
         
         
