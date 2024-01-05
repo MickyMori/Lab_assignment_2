@@ -1,8 +1,8 @@
-#include "lab_assignment_2/my_action.h" 
+#include "my_rosplan_interface/my_action.h" 
 #include <unistd.h>
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
-#include <rt2_packages/motion_plan/action/PlanningAction.h> //controllare che la cartella sia nella posizione giusta
+#include <motion_plan/PlanningAction.h> //controllare che la cartella sia nella posizione giusta
 
 namespace KCL_rosplan {
     MyActionInterface::MyActionInterface(ros::NodeHandle &nh) {
