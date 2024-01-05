@@ -19,9 +19,9 @@
   
   <include file="$(find rosbot_bringup)/launch/rosbot_gazebo.launch"/>
 
-  <node pkg="lab_assignment_2" type="logic_node" name="logic_node" launch-prefix="konsole -e"/>
+  <node pkg="lab_assignment_2" type="logic_node" name="logic_node"/>
 
-  <node name="go_to_point" pkg="motion_plan" type="go_to_point_action.py" respawn="false" launch-prefix="konsole -e"/>
+  <include file="$(find lab_assignment_2)/launch/move_base.launch"/>
 
   <include file="$(find lab_assignment_2)/launch/gmapping.launch"></include>
 
@@ -63,22 +63,18 @@
   </node>
 
   <!-- plan dispatcher -->
-  <node name="rosplan_plan_dispatcher" pkg="rosplan_planning_system" type="pddl_simple_plan_dispatcher" respawn="false" output="screen" launch-prefix="konsole -e">
+  <node name="rosplan_plan_dispatcher" pkg="rosplan_planning_system" type="pddl_simple_plan_dispatcher" respawn="false" output="screen">
     <param name="knowledge_base" value="rosplan_knowledge_base" />
     <param name="plan_topic" value="/rosplan_parsing_interface/complete_plan" />
     <param name="action_dispatch_topic" value="action_dispatch" />
     <param name="action_feedback_topic" value="action_feedback" />
   </node>
 
-  <!-- action interface 
+  <!-- action interface -->
     <node name="rosplan_interface_goto_waypoint" pkg="lab_assignment_2" type="go_to_wp" respawn="false" output="screen">
         <param name="knowledge_base" value="rosplan_knowledge_base" />
         <param name="pddl_action_name" value="goto_waypoint" />
         <param name="action_dispatch_topic" value="/rosplan_plan_dispatcher/action_dispatch" />
         <param name="action_feedback_topic" value="/rosplan_plan_dispatcher/action_feedback" />
-    </node>-->
-
-    <include file="$(find rosplan_planning_system)/launch/includes/simulated_action.launch" >
-      <arg name="pddl_action_name" value="goto_waypoint" />
-    </include>
+    </node>
 </launch>

@@ -14,6 +14,13 @@ find_package(catkin REQUIRED COMPONENTS
   std_srvs
   geometry_msgs
   rosplan_planning_system
+  diagnostic_msgs
+  rosplan_dispatch_msgs
+  rosplan_knowledge_msgs
+  rosplan_dependencies
+  actionlib
+  roslib
+  rostest
 )
 
 ## System dependencies are found with CMake's conventions
