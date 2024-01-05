@@ -32,6 +32,7 @@ int main(int argc, char **argv)
                 else
                 {
                     ROS_ERROR("Failed to call dispatcher");
+                    sleep(15);
                     return 1;
                 }
             }
