@@ -32,20 +32,20 @@ namespace KCL_rosplan {
         
         if(msg->parameters[1].value == "m11"){
         
-        id_marker = 11;
+        id_marker.data = 11;
         }
         
         else if(msg->parameters[1].value == "m12"){
         
-        id_marker = 12;
+        id_marker.data = 12;
         }
         else if(msg->parameters[1].value == "m13"){
         
-        id_marker = 13;
+        id_marker.data = 13;
         }
         else if(msg->parameters[1].value == "m15"){
         
-        id_marker = 15;
+        id_marker.data = 15;
         }
         
         fm.sendGoal(id_marker);
