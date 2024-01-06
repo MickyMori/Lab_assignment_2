@@ -25,7 +25,7 @@ public:
         // Publish marker request
 
         std_msgs::Int32 id;
-        id.data = goal->value;
+        id.data = goal->goal;
         marker_pub_.publish(id);
 
         rotate_rosbot(0.8);
