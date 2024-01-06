@@ -23,7 +23,7 @@ namespace KCL_rosplan {
         
         FindMarkerClient fm("find_marker", true);
 
-	    std_msgs::Int32 id_marker;
+	    lab_assignment_2::FindMarkerGoal id_marker;
 
         while(!fm.waitForServer(ros::Duration(5.0))){
             ROS_INFO("Waiting for the find_marker action server to come up");
