@@ -2,6 +2,7 @@
 #include <actionlib/server/simple_action_server.h>
 #include <lab_assignment_2/FindMarkerAction.h>
 #include <std_msgs/Int32.h>
+#include <std_msgs/Empty.h>
 #include <geometry_msgs/Twist.h>
 
 class FindMarkerActionServer {
