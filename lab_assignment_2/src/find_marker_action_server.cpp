@@ -18,7 +18,7 @@ public:
     {
         geometry_msgs::Twist cmd_vel_msg;
         cmd_vel_msg.angular.z = ang_z;
-        cmd_vel_pub.publish(cmd_vel_msg);
+        cmd_vel_pub_.publish(cmd_vel_msg);
     }
 
     void executeCallback(const lab_assignment_2::FindMarkerGoalConstPtr &goal) {
