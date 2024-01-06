@@ -7,6 +7,8 @@
 #include <move_base_msgs/MoveBaseGoal.h>
 #include <geometry_msgs/PoseStamped.h>
 
+typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
+
 namespace KCL_rosplan {
 
     MyActionInterface::MyActionInterface(ros::NodeHandle &nh) {
@@ -18,7 +20,7 @@ namespace KCL_rosplan {
         // here the implementation of the action
         std::cout << "Going from " << msg->parameters[1].value << " to " << msg->parameters[2].value << std::endl;
         
-        actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ac("move_base", true);
+        MoveBaseAction ac("move_base", true);
 
 	    move_base_msgs::MoveBaseGoal goal;
 
@@ -30,20 +32,25 @@ namespace KCL_rosplan {
         goal.target_pose.header.stamp = ros::Time::now();
 
         if(msg->parameters[2].value == "wp1"){
+            ROS_INFO("Recived wp1");
             goal.target_pose.pose.position.x = 2.0;
             goal.target_pose.pose.position.y = 2.0;
+            goal.target_pose.pose.orientation.w = 1.0;
         }
         else if (msg->parameters[2].value == "wp2"){
             goal.target_pose.pose.position.x = 2.0;
             goal.target_pose.pose.position.y = 2.0;
+            goal.target_pose.pose.orientation.w = 1.0;
         }
         else if (msg->parameters[2].value == "wp3"){
             goal.target_pose.pose.position.x = 0.0;
             goal.target_pose.pose.position.y = 2.0;
+            goal.target_pose.pose.orientation.w = 1.0;
         }
         else if (msg->parameters[2].value == "wp4"){
             goal.target_pose.pose.position.x = 0.0;
             goal.target_pose.pose.position.y = -2.0;
+            goal.target_pose.pose.orientation.w = 1.0;
         }
 
         ac.sendGoal(goal);
