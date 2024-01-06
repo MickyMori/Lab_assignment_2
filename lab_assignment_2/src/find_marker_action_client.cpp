@@ -7,6 +7,7 @@
 #include <move_base_msgs/MoveBaseGoal.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <std_msgs/Int32.h>
+#include <lab_assignment_2/FindMarkerAction.h>
 
 typedef actionlib::SimpleActionClient<lab_assignment_2::FindMarkerAction> FindMarkerClient;
 
