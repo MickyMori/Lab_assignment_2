@@ -8,6 +8,8 @@ project(lab_assignment_2)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  cv_bridge
+  image_transport
   roscpp
   rospy
   std_msgs
@@ -21,6 +23,10 @@ find_package(catkin REQUIRED COMPONENTS
   actionlib
   roslib
   rostest
+  aruco
+  aruco_msgs
+  sensor_msgs
+  visualization_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -80,6 +86,7 @@ find_package(catkin REQUIRED COMPONENTS
  generate_messages(
    DEPENDENCIES
    std_msgs
+   actionlib_msgs
  )
 
 ################################################
