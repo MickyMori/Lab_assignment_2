@@ -14,7 +14,7 @@ public:
         found_sub_ = nh_.subscribe("/rosbot/marker_found", 1, &FindMarkerActionServer::foundCallback, this);
     }
 
-    void roatate_rosbot(double ang_z)
+    void rotate_rosbot(double ang_z)
     {
         geometry_msgs::Twist cmd_vel_msg;
         cmd_vel_msg.angular.z = ang_z;
@@ -23,6 +23,7 @@ public:
 
     void executeCallback(const lab_assignment_2::FindMarkerGoalConstPtr &goal) {
         // Publish marker request
+
         std_msgs::Int32 id = goal;
         marker_pub_.publish(id);
 
@@ -34,10 +35,10 @@ public:
             ros::Duration(0.1).sleep();  // adjust sleep duration as needed
         }
 
-        roatate_rosbot(0.0);
+        rotate_rosbot(0.0);
 
         lab_assignment_2::FindMarkerResult result;
-        result.result = true;
+        result = true;
         as_.setSucceeded(result);
     }
 

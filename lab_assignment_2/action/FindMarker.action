@@ -1,4 +1,4 @@
-int32 goal
+std_msgs/Int32 goal
 ---
 ---
 bool result
