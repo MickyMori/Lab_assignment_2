@@ -51,10 +51,16 @@ namespace KCL_rosplan {
         
         
         if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
+        {
             ROS_INFO("Hooray, the base moved 1 meter forward");
+            return true;
+        }
         else
+        {
             ROS_INFO("The base failed to move forward 1 meter for some reason");
-        return true;
+            return false;
+        }
+        
     }
 }
 int main(int argc, char **argv) {
