@@ -26,8 +26,8 @@
   <include file="$(find lab_assignment_2)/launch/gmapping.launch"></include>
 
   <!-- arguments -->
-  <arg name="domain_path" default="$(find lab_assignment_2)/common/domain.pddl" />
-  <arg name="problem_path" default="$(find lab_assignment_2)/common/problem.pddl" />
+  <arg name="domain_path" default="$(find lab_assignment_2)/pddl/domain_rosbot.pddl" />
+  <arg name="problem_path" default="$(find lab_assignment_2)/pddl/problem_rosbot.pddl" />
 
   <!-- knowledge base -->
   <node name="rosplan_knowledge_base" pkg="rosplan_knowledge_base" type="knowledgeBase" respawn="false" output="screen">
@@ -41,7 +41,7 @@
   <include file="$(find rosplan_planning_system)/launch/includes/problem_interface.launch">
     <arg name="knowledge_base" value="rosplan_knowledge_base" />
     <arg name="domain_path" value="$(arg domain_path)" />
-    <arg name="problem_path" value="$(find lab_assignment_2)/common/new_problem.pddl" />
+    <arg name="problem_path" value="$(find lab_assignment_2)/pddl/new_problem.pddl" />
     <arg name="problem_topic" value="problem_instance" />
   </include>
 
