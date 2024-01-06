@@ -20,7 +20,7 @@ namespace KCL_rosplan {
         // here the implementation of the action
         std::cout << "Going from " << msg->parameters[1].value << " to " << msg->parameters[2].value << std::endl;
         
-        MoveBaseAction ac("move_base", true);
+        MoveBaseClient ac("move_base", true);
 
 	    move_base_msgs::MoveBaseGoal goal;
 
