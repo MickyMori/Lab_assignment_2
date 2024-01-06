@@ -34,6 +34,7 @@ namespace KCL_rosplan {
         if(msg->parameters[2].value == "wp1"){
             goal.target_pose.pose.position.x = 6.0;
             goal.target_pose.pose.position.y = 2.0;
+            goal.target_pose.pose.orientation.w = 1.0;
         }
         else if (msg->parameters[2].value == "wp2"){
             goal.target_pose.pose.position.x = 7.0;
