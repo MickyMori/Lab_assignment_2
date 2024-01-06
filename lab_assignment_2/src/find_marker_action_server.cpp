@@ -36,6 +36,7 @@ public:
             ros::Duration(0.1).sleep();  // adjust sleep duration as needed
         }
 
+        marker_found_ = false;
         rotate_rosbot(0.0);
 
         as_.setSucceeded();
