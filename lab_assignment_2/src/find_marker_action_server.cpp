@@ -24,7 +24,8 @@ public:
     void executeCallback(const lab_assignment_2::FindMarkerGoalConstPtr &goal) {
         // Publish marker request
 
-        std_msgs::Int32 id.data = goal.data;
+        std_msgs::Int32 id;
+        id.data = goal.data;
         marker_pub_.publish(id);
 
         rotate_rosbot(0.8);
