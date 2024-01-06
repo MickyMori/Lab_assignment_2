@@ -51,6 +51,11 @@ namespace KCL_rosplan {
             goal.target_pose.pose.position.y = -1.5;
             goal.target_pose.pose.orientation.w = 1.0;
         }
+        else if (msg->parameters[2].value == "start"){
+            goal.target_pose.pose.position.x = 0.0;
+            goal.target_pose.pose.position.y = 1.0;
+            goal.target_pose.pose.orientation.w = 1.0;
+        }
 
         ac.sendGoal(goal);
         ac.waitForResult();

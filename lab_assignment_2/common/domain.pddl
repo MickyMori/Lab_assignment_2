@@ -16,10 +16,6 @@
 	 (return ?wp - waypoint)
 )
 
-(:functions
-    	 (found)
-)
-
 ;; Move to any waypoint, avoiding terrain
 (:durative-action goto_waypoint
 	 :parameters (?r - robot ?from ?to - waypoint)
@@ -38,23 +34,9 @@
 	 :duration ( = ?duration 60)
 	 :condition (and 
 		   	(at start (robot_at ?r ?wp))
-		   	(at start (marker_at ?m ? wp)))
+		   	(at start (marker_at ?m ?wp)))
 	 :effect (and
-	   		(at end (increase (found) 1))
 	   		(at end (marker_found ?m)))
-)
-
-;; Return to start position
-(:durative-action return_home
-	 :parameters (?r - robot ?from ?to - waypoint)
-	 :duration ( = ?duration 30)
-	 :condition (and
-	  		(at start (= (found) 4))
-	  		(at start (robot_at ?r ?from)))
-	 :effect (and
-	  		(at start (not (robot_at ?r ?from)))
-	  		(at end (return ?to))
-	  		(at end (robot_at ?r ?to)))
 )
 
 )

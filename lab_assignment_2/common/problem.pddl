@@ -24,6 +24,6 @@
     (marker_found m12)
     (marker_found m13)
     (marker_found m15)
-    (return start)
+    (robot_at rosbot start)
 ))
 )
