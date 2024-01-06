@@ -38,9 +38,7 @@ public:
 
         rotate_rosbot(0.0);
 
-        lab_assignment_2::FindMarkerResult result;
-        result->result = true;
-        as_.setSucceeded(result);
+        as_.setSucceeded();
     }
 
     void foundCallback(const std_msgs::Empty::ConstPtr& msg) {
