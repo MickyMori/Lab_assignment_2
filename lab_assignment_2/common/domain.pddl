@@ -14,6 +14,7 @@
 	 (marker_found ?m - marker)
 	 (marker_at ?m - marker ?wp - waypoint)
 	 (return ?wp - waypoint)
+	 (connect ?wpx -waypoint ?wpy - waypoint)
 )
 
 ;; Move to any waypoint, avoiding terrain
@@ -21,7 +22,8 @@
 	 :parameters (?r - robot ?from ?to - waypoint)
 	 :duration ( = ?duration 60)
 	 :condition (and
-	  		(at start (robot_at ?r ?from)))
+	  		(at start (robot_at ?r ?from))
+	  		(at start (connect ?from ?to)))
 	 :effect (and
 			(at start (not (robot_at ?r ?from)))
 			(at end (visited ?to))
@@ -34,7 +36,7 @@
 	 :duration ( = ?duration 60)
 	 :condition (and 
 		   	(at start (robot_at ?r ?wp))
-		   	(at start (marker_at ?m ?wp)))
+		   	(at start (marker_at ?m ? wp)))
 	 :effect (and
 	   		(at end (marker_found ?m)))
 )

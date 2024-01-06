@@ -9,14 +9,17 @@
     (robot_at rosbot start)
 
 
-
+    (connect start wp1)
+    (connect wp1 wp2)
+    (connect wp2 wp3)
+    (connect wp3 wp4)
+    (connect wp4 start)
+    
     (marker_at m11 wp1)
     (marker_at m12 wp2)
     (marker_at m13 wp3)
     (marker_at m15 wp4)
 
-
-    (= (found) 0)
 
 )
 (:goal (and
