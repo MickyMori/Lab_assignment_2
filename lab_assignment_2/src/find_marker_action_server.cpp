@@ -49,6 +49,7 @@ private:
     ros::NodeHandle nh_;
     actionlib::SimpleActionServer<lab_assignment_2::FindMarkerAction> as_;
     ros::Publisher marker_pub_;
+    ros::Publisher cmd_vel_pub;
     ros::Subscriber found_sub_;
     bool marker_found_ = false;
 };
