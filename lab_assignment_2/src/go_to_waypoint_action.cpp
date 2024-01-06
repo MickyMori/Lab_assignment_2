@@ -32,24 +32,22 @@ namespace KCL_rosplan {
         goal.target_pose.header.stamp = ros::Time::now();
 
         if(msg->parameters[2].value == "wp1"){
-            ROS_INFO("Recived wp1");
-            goal.target_pose.pose.position.x = 2.0;
+            goal.target_pose.pose.position.x = 6.0;
             goal.target_pose.pose.position.y = 2.0;
-            goal.target_pose.pose.orientation.w = 1.0;
         }
         else if (msg->parameters[2].value == "wp2"){
-            goal.target_pose.pose.position.x = 2.0;
-            goal.target_pose.pose.position.y = 2.0;
+            goal.target_pose.pose.position.x = 7.0;
+            goal.target_pose.pose.position.y = -5.0;
             goal.target_pose.pose.orientation.w = 1.0;
         }
         else if (msg->parameters[2].value == "wp3"){
-            goal.target_pose.pose.position.x = 0.0;
-            goal.target_pose.pose.position.y = 2.0;
+            goal.target_pose.pose.position.x = -3.0;
+            goal.target_pose.pose.position.y = -8.0;
             goal.target_pose.pose.orientation.w = 1.0;
         }
         else if (msg->parameters[2].value == "wp4"){
-            goal.target_pose.pose.position.x = 0.0;
-            goal.target_pose.pose.position.y = -2.0;
+            goal.target_pose.pose.position.x = -7.0;
+            goal.target_pose.pose.position.y = -1.5;
             goal.target_pose.pose.orientation.w = 1.0;
         }
 
