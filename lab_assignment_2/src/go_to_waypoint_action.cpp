@@ -28,7 +28,7 @@ namespace KCL_rosplan {
             ROS_INFO("Waiting for the move_base action server to come up");
         }
 
-        goal.target_pose.header.frame_id = "base_link";
+        goal.target_pose.header.frame_id = "map";
         goal.target_pose.header.stamp = ros::Time::now();
 
         if(msg->parameters[2].value == "wp1"){
