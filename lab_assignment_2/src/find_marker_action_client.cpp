@@ -48,7 +48,7 @@ namespace KCL_rosplan {
         id_marker = 15;
         }
         
-        fm.sendGoal(id_marker)
+        fm.sendGoal(id_marker);
         fm.waitForResult();
         
         
