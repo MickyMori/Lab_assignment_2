@@ -22,7 +22,9 @@ namespace KCL_rosplan {
 
 	    move_base_msgs::MoveBaseGoal goal;
 
-        ac.waitForServer();
+        while(!ac.waitForServer(ros::Duration(5.0))){
+            ROS_INFO("Waiting for the move_base action server to come up");
+        }
 
         goal.target_pose.header.frame_id = "base_link";
         goal.target_pose.header.stamp = ros::Time::now();
