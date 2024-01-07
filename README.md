@@ -84,10 +84,10 @@ Now run `catkin_make` inside the `catkin_ws` folder in order to build the worksp
 Finally, download our project in the `src` folder with
 
 ```bash
-git clone https://github.com/ros-planning/navigation.git
+https://github.com/MickyMori/Lab_assignment_2.git
 ```
 
-Build the dependancies on our package with `catkin_make --only-pkg-with-deps lab_assignment_2` and run the whole project by running the launch file:
+Build with `catkin_make --only-pkg-with-deps lab_assignment_2` and run the whole project by running the launch file:
 
 ```bash
 roslaunch lab_assignment_2 assignment.launch
