@@ -135,7 +135,7 @@ Create an `Action Client` that:
 * Sends a goal indicating the ID of the marker it wants to find.
 * Prints on screen if the robot succedeed in finding the goal.
   
-![Flowchart of the robot behaviour](lab_assignment_2/media/Flowchart.png)
+![Flowchart of the robot behaviour](lab_assignment_2/media/Assignment2.png)
 
 Simulation
 -----------------------
