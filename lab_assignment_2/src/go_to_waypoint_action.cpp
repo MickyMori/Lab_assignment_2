@@ -42,7 +42,7 @@ namespace KCL_rosplan {
             goal.target_pose.pose.orientation.w = 1.0;
         }
         else if (msg->parameters[2].value == "wp3"){
-            goal.target_pose.pose.position.x = -3.0;
+            goal.target_pose.pose.position.x = -3.3;
             goal.target_pose.pose.position.y = -8.0;
             goal.target_pose.pose.orientation.w = 1.0;
         }
@@ -63,12 +63,12 @@ namespace KCL_rosplan {
         
         if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
         {
-            ROS_INFO("Hooray, the base moved 1 meter forward");
+            ROS_INFO("Goal reached");
             return true;
         }
         else
         {
-            ROS_INFO("The base failed to move forward 1 meter for some reason");
+            ROS_INFO("The base failed to reach the goal");
             return false;
         }
         

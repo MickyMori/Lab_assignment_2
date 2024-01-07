@@ -42,7 +42,7 @@
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
 #include <std_msgs/Int32.h>
-#include <std_msgs/Empty.h>
+#include <lab_assignment_2/Marker.h>
 #include <unistd.h>
 
 class ArucoMarkerPublisher
@@ -65,7 +65,7 @@ private:
   image_transport::Subscriber image_sub_;
   ros::Subscriber search_sub;
 
-  ros::Publisher marker_pub = nh_.advertise<std_msgs::Empty>("/rosbot/marker_found", 1);
+  ros::Publisher marker_pub = nh_.advertise<lab_assignment_2::Marker>("/rosbot/marker_found", 1);
   image_transport::Publisher image_pub_;
   //image_transport::Publisher debug_pub_;
 
@@ -86,6 +86,7 @@ public:
   }
   
   void search_callback(const std_msgs::Int32 target_msg){
+  	std::cout << "Looking for "<< target_msg.data << std::endl;
   	target = target_msg.data;
   }
 
@@ -108,13 +109,16 @@ public:
       // ok, let's detect
       mDetector_.detect(inImage_, markers_, camParam_, marker_size_, false);
       
-      std_msgs::Empty empty_msg;
+      lab_assignment_2::Marker mrk_msg;
 
         for (std::size_t i = 0; i < markers_.size(); ++i)
         {
         	//only send information about the current target
         	if(markers_.at(i).id == target){
-            marker_pub.publish(empty_msg);
+            mrk_msg.id = markers_.at(i).id;
+            mrk_msg.center.x = markers_.at(i).getCenter().x;
+            mrk_msg.center.y = markers_.at(i).getCenter().y;
+            marker_pub.publish(mrk_msg);
         	}
         }
 

@@ -20,7 +20,7 @@ namespace KCL_rosplan {
     bool MyActionInterface::concreteCallback(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr& msg) 
     {
         // here the implementation of the action
-        std::cout << "Trying to find marker" << msg->parameters[1].value << std::endl;
+        std::cout << "Trying to find marker " << msg->parameters[1].value << std::endl;
         
         FindMarkerClient fm("find_marker", true);
 

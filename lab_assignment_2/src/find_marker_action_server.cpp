@@ -1,8 +1,10 @@
 #include <ros/ros.h>
+#include <unistd.h>
+#include <iostream>
 #include <actionlib/server/simple_action_server.h>
 #include <lab_assignment_2/FindMarkerAction.h>
 #include <std_msgs/Int32.h>
-#include <std_msgs/Empty.h>
+#include <lab_assignment_2/Marker.h>
 #include <geometry_msgs/Twist.h>
 
 class FindMarkerActionServer {
@@ -24,9 +26,11 @@ public:
     void executeCallback(const lab_assignment_2::FindMarkerGoalConstPtr &goal) {
         // Publish marker request
 
-        std_msgs::Int32 id;
         id.data = goal->goal;
+        std::cout << "Finding "<< id.data << std::endl;
         marker_pub_.publish(id);
+
+        marker_found_ = false;
 
         rotate_rosbot(0.8);
 
@@ -36,14 +40,17 @@ public:
             ros::Duration(0.1).sleep();  // adjust sleep duration as needed
         }
 
-        marker_found_ = false;
         rotate_rosbot(0.0);
 
+        std::cout << "Found "<< id.data << std::endl;
         as_.setSucceeded();
     }
 
-    void foundCallback(const std_msgs::Empty::ConstPtr& msg) {
-        marker_found_ = true;
+    void foundCallback(const lab_assignment_2::Marker msg) {
+        if((msg.id == id.data))
+        {
+            marker_found_ = true;
+        }
     }
 
 private:
@@ -53,6 +60,7 @@ private:
     ros::Publisher cmd_vel_pub_;
     ros::Subscriber found_sub_;
     bool marker_found_ = false;
+    std_msgs::Int32 id;
 };
 
 int main(int argc, char** argv) {
