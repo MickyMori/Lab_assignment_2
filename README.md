@@ -1,12 +1,12 @@
-Experimental Robotics Laboratory 🤖
+Experimental Robotics Laboratory
 ======================================
 
-Project Description 📎
+Project Description
 -------------------------
 
 
 
-Team Members 👨‍🔬
+Team Members
 -------------
 
 |    |Name |Surname |ID |
@@ -18,7 +18,7 @@ Team Members 👨‍🔬
 | 5 | Andrea | Bolla | S4482930 |
 
 
-Create and setup a Catkin Workspace 🧰
+Create and setup a Catkin Workspace
 --------------------------------
 
 A catkin (ROS) workspace is a directory in which you can create or modify existing catkin packages. We will label our catkin workspace `catkin_ws`. To create the catkin workspace, type the following commands in the Terminal:
@@ -44,7 +44,7 @@ Remember to add this source command to your `.bashrc` file under the source line
 gedit ~/.bashrc
 ```
 
-How to run the simulation ⌨️
+How to run the simulation
 -------------------------
 
 
@@ -54,17 +54,17 @@ Finally, run the whole project by running the launch file:
 roslaunch lab_assignment_2 assignment.launch
 ```
 
-Flowchart 🎞️
+Flowchart
 -----------------------
 
 
 
-Node Graph 🔖
+Node Graph
 -----------------------
 
 
 
-Simulation 💻
+Simulation
 -----------------------
 
 
