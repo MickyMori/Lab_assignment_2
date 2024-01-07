@@ -4,14 +4,15 @@ Experimental Robotics Laboratory
 Project Description
 -------------------------
 
-The aim of this project is to develop a ROS package that uses PDDL and ROSPlan to guide a mobile robot equipped with a camera to find all markers while autonomously avoid any obstacle on its path. The robot should then return to its initial position .
+The aim of this project is to develop a ROS package that uses PDDL and ROSPlan to guide a mobile robot equipped with a camera to find all markers while autonomously avoid any obstacle on its path. The robot should then return to its initial position.
 
 The markers are placed at known positions:
 - Marker 11 is visible from the position (x = 6.0, y = 2.0).
 - Marker 12 is visible from the position (x = 7.0, y = -5.0).
 - Marker 13 is visible from the position (x = -3.0, y = -8.0).
 - Marker 15 is visible from the position (x = -7.0, y = -1.5).
-- The initial position is situated at (x = 0.0, y = 1.0).
+  
+The initial position is situated at (x = 0.0, y = 1.0).
 
 Team Members
 -------------
@@ -62,6 +63,7 @@ First thing first, move inside the `src` folder of your ros workspace and downlo
 git clone https://github.com/CarmineD8/aruco_ros.git
 git clone https://github.com/husarion/rosbot_ros.git -b noetic 
 ```
+
 `Note` : Be careful to add "-y 1.0" inside args at line 9 of the launch file `rosbot_ros/src/rosbot_bringup/launch/rosbot_gazebo.launch`
 
 Then, in order to be able to use ROSPlan, run on terminal:
@@ -70,6 +72,7 @@ Then, in order to be able to use ROSPlan, run on terminal:
 sudo apt install flex bison freeglut3-dev libbdd-dev python3-catkin-tools ros-noetic-tf2-bullet
 git clone https://github.com/KCL-Planning/ROSPlan
 ```
+
 `Note` : You will need to modify the `CMakeList.txt` file inside the package `rosplan_dependencies` by adding at line 92 the string "-Wno-error=deprecated-copy"
 
 Now, in order to install the packages relative to the navigation, run inside the `src` folder:
@@ -92,7 +95,7 @@ Now run `catkin_make` inside the `catkin_ws` folder in order to build the worksp
 Finally, download our project in the `src` folder with:
 
 ```bash
-https://github.com/MickyMori/Lab_assignment_2.git
+git clone https://github.com/MickyMori/Lab_assignment_2.git
 ```
 
 Build with `catkin_make --only-pkg-with-deps lab_assignment_2` and run the whole project by running the launch file:
