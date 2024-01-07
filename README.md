@@ -104,7 +104,7 @@ roslaunch lab_assignment_2 assignment.launch
 Flowchart
 -----------------------
 
-- `Logic Node` (Logic_node.cpp)
+`Logic Node` (Logic_node.cpp)
 
 Works with `ROSPlan` in order to:
 * Generate the problem.
@@ -112,24 +112,24 @@ Works with `ROSPlan` in order to:
 * Parse the plan.
 * Dispatch the plan in order to reach the goal of the task.
 
-- `Camera Node` (CV_node.cpp)
+`Camera Node` (CV_node.cpp)
 
 * Subscribes to target and camera feed messages.
 * Detects Aruco markers by processing them.
 * Publishes marker information to control robot movement.
 
-- `GoToTarget Node` (go_to_waypoint_action.cpp)
+`GoToTarget Node` (go_to_waypoint_action.cpp)
 
 Receives the targeted waypoint from the dispatcher by implementing the durative action `goto_waypoint` defined in the domain and sends the goal to the `Action Client`.
 
-- `FindMarker Action Server Node` (find_marker_action_server.cpp)
+`FindMarker Action Server Node` (find_marker_action_server.cpp)
 
 Create an `Action Server` that:
 * Publishes on the `/rosbot/search_id` topic the ID of the marker it is searching for.
 * Rrotates the robot by publishing angular velocity commands on the `/cmd_vel topic` to search for the marker.
 * Subscribes to the `/rosbot/marker_found` topic to know wether the marker was found or not.
 
-- `FindMarker Action Client Node` (find_marker_action_client.cpp)
+`FindMarker Action Client Node` (find_marker_action_client.cpp)
 
 Create an `Action Client` that:
 * Sends a goal indicating the ID of the marker it wants to find.
