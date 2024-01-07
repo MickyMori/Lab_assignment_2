@@ -122,7 +122,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES lab_assignment_2
 #  CATKIN_DEPENDS roscpp rospy std_msgs
-#  DEPENDS system_lib
+  DEPENDS OpenCV
 )
 
 ###########
@@ -185,7 +185,7 @@ target_link_libraries(find_marker_action_client
  ${catkin_LIBRARIES}
 )
 target_link_libraries(CV_node
- ${catkin_LIBRARIES}
+ ${catkin_LIBRARIES} ${OpenCV_LIBRARIES}
 )
 
 #############
