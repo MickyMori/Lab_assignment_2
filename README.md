@@ -113,11 +113,13 @@ Works with `ROSPlan` in order to:
 * Dispatch the plan in order to reach the goal of the task.
 
 `Camera Node` (CV_node.cpp)
+
 * Subscribes to target and camera feed messages.
 * Detects Aruco markers by processing them.
 * Publishes marker information to control robot movement.
 
 `GoToTarget Node` (go_to_waypoint_action.cpp)
+
 Receives the targeted waypoint from the dispatcher by implementing the durative action `goto_waypoint` defined in the domain and sends the goal to the `Action Client`.
 
 `FindMarker Action Server Node` (find_marker_action_server.cpp)
