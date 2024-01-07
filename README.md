@@ -104,7 +104,7 @@ roslaunch lab_assignment_2 assignment.launch
 Flowchart
 -----------------------
 
-`Logic Node` (Logic_node.cpp)
+`Logic Node` (logic_node.cpp)
 
 Works with `ROSPlan` in order to:
 * Generate the problem.
