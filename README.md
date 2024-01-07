@@ -78,6 +78,13 @@ Then in order to install the packages relative to the navigation, run inside the
 git clone https://github.com/ros-planning/navigation.git
 ```
 
+At this point we can install `gmapping` by running the following lines of code:
+
+```bash
+sudo apt-get install ros-<ros_distro>-openslam-gmapping
+git clone -b noetic https://github.com/CarmineD8/SLAM_packages.git
+```
+
 Now run `catkin_make` inside the `catkin_ws` folder in order to build the workspace.
 `Note` : there may be some problems while running this command, in order too avoid it, remove the package `amcl` from the navigation packages and try again.
 
