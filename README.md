@@ -79,7 +79,7 @@ git clone https://github.com/ros-planning/navigation.git
 ```
 
 Now run `catkin_make` inside the `catkin_ws` folder in order to build the workspace.
-`Note` : there may be some problems while running this command, in order too avoid it, remove the package `acl` from the navigation packages and try again.
+`Note` : there may be some problems while running this command, in order too avoid it, remove the package `amcl` from the navigation packages and try again.
 
 Finally, download our project in the `src` folder with
 
