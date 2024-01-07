@@ -152,3 +152,4 @@ Possible Improvements
 -----------------------
 
 * Only one marker at a time can be seen by the robot, so it will look for them in the order specified in the problem file, a possible improvement could be to check them as found even if they are encountered beforehand, or to calculate an optimal path to achieve the goal of reaching every marker in less time.
+* One potential improvement to the mapping algorithm involves exploring alternative approaches, substituting the current Gmapping, a filtering-based method, with an optimization-based approach like KartoSlam.
