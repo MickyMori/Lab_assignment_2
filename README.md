@@ -62,7 +62,7 @@ First thing first, move inside the `src` folder of your ros workspace and downlo
 git clone https://github.com/CarmineD8/aruco_ros.git
 git clone https://github.com/husarion/rosbot_ros.git -b noetic 
 ```
-`Note` : be careful to add "-y 1.0" inside args at line 9 of the launch file `rosbot_ros/src/rosbot_bringup/launch/rosbot_gazebo.launch`
+`Note` : Be careful to add "-y 1.0" inside args at line 9 of the launch file `rosbot_ros/src/rosbot_bringup/launch/rosbot_gazebo.launch`
 
 Then, in order to be able to use ROSPlan, run on terminal:
 
@@ -70,7 +70,7 @@ Then, in order to be able to use ROSPlan, run on terminal:
 sudo apt install flex bison freeglut3-dev libbdd-dev python3-catkin-tools ros-noetic-tf2-bullet
 git clone https://github.com/KCL-Planning/ROSPlan
 ```
-`Note` : you will need to modify the `CMakeList.txt` file inside the package `rosplan_dependencies` by adding at line 92 the string "-Wno-error=deprecated-copy"
+`Note` : You will need to modify the `CMakeList.txt` file inside the package `rosplan_dependencies` by adding at line 92 the string "-Wno-error=deprecated-copy"
 
 Now, in order to install the packages relative to the navigation, run inside the `src` folder:
 
@@ -87,7 +87,7 @@ git clone -b noetic https://github.com/CarmineD8/SLAM_packages.git
 
 Now run `catkin_make` inside the `catkin_ws` folder in order to build the workspace.
 
-`Note` : there may be some problems while running this command, in order to avoid it, remove the package `amcl` from the navigation packages and try again.
+`Note` : There may be some problems while running this command, in order to avoid it, remove the package `amcl` from the navigation packages and try again.
 
 Finally, download our project in the `src` folder with:
 
