@@ -101,6 +101,9 @@ Flowchart
 Simulation
 -----------------------
 
+Here is the simulated behaviour of the robot, provided with a window that shows what the robot's camera is capturing.
+
+https://github.com/MickyMori/Lab_assignment_2/assets/104144305/3842905a-2b04-4348-b604-f1e51f4b2101
 
 
 Possible Improvements
