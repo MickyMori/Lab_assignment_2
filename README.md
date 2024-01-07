@@ -4,14 +4,14 @@ Experimental Robotics Laboratory
 Project Description
 -------------------------
 
-The aim of this project is to develop a ROS package that uses pddl and ROSPlan to guide a mobile robot endowed with a camera to find all markers in the environment and then go back to the initial position while autonomously avoid any obstacle on the path.
+The aim of this project is to develop a ROS package that uses PDDL and ROSPlan to guide a mobile robot equipped with a camera to find all markers while autonomously avoid any obstacle on its path. The robot should then return to its initial position .
 
-The marker will be set everytime in known positions:
-- marker 11 is visible from the position x = 6.0, y = 2.0
-- marker 12 is visible from the position x = 7.0, y = -5.0
-- marker 13 is visible from the position x = -3.0, y = -8.0
-- marker 15 is visible from the position x = -7.0, y = -1.5
-- the initial position is situated at x = 0.0, y = 1.0
+The markers are placed at known positions:
+- Marker 11 is visible from the position (x = 6.0, y = 2.0).
+- Marker 12 is visible from the position (x = 7.0, y = -5.0).
+- Marker 13 is visible from the position (x = -3.0, y = -8.0).
+- Marker 15 is visible from the position (x = -7.0, y = -1.5).
+- The initial position is situated at (x = 0.0, y = 1.0).
 
 Team Members
 -------------
