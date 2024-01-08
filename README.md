@@ -84,7 +84,7 @@ git clone https://github.com/ros-planning/navigation.git
 At this point we can install `gmapping` by running the following lines of code:
 
 ```bash
-sudo apt-get install ros-<ros_distro>-openslam-gmapping
+sudo apt-get install ros-noetic-openslam-gmapping
 git clone -b noetic https://github.com/CarmineD8/SLAM_packages.git
 ```
 
@@ -129,8 +129,8 @@ Receives the targeted waypoint from the dispatcher by implementing the durative 
 
 Create an `Action Server` that:
 * Publishes on the `/rosbot/search_id` topic the ID of the marker it is searching for.
-* Rrotates the robot by publishing angular velocity commands on the `/cmd_vel topic` to search for the marker.
-* Subscribes to the `/rosbot/marker_found` topic to know wether the marker was found or not.
+* Rotates the robot by publishing angular velocity commands on the `/cmd_vel topic` to search for the marker.
+* Subscribes to the `/rosbot/marker_found` topic to know whether the marker was found or not.
 
 ### FindMarker Action Client Node (find_marker_action_client.cpp)
 
